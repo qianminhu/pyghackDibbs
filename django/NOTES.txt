@@ -1,0 +1,12 @@
+. /work/aantony/2017-09-22-pyghack/dibs_env/bin/activate
+
+cd /work/aantony/2017-09-22-pyghack/dibs
+
+./manage.py makemigrations dibbs_app
+./manage.py migrate
+
+# start dev server on all IPs
+# http://165.227.208.169:8000
+./manage.py runserver 0.0.0.0:8000
+
+
