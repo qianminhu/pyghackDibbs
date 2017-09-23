@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User, Group
+from dibbs_app.models import Donation
 from rest_framework import serializers
 
 
@@ -12,3 +13,8 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ('url', 'name')
+
+class DonationSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Donation
+        fields = ('title')
