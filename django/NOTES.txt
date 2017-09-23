@@ -1,6 +1,6 @@
 . /work/aantony/2017-09-22-pyghack/dibs_env/bin/activate
 
-cd /work/aantony/2017-09-22-pyghack/dibs
+cd /work/aantony/2017-09-22-pyghack/pyghackDibbs/django/
 
 ./manage.py makemigrations dibbs_app
 ./manage.py migrate
