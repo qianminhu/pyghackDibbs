@@ -7,18 +7,18 @@ import SignUp from './components/SignUp/SignUp.jsx';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Router>
-          <div className="Router">
-            <Route exact path="/" component={Landing} />
-            <Route path="/signup" component={SignUp} />
-          </div>
-        </Router>
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <Router>
+                <div className="Router">
+                    <Route exact path="/" component={Landing} />
+                    <Route path="/signup" component={SignUp} />
+                </div>
+                </Router>
+            </div>
+        );
+    }
 }
 
 export default App;
