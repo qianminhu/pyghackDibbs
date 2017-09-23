@@ -17,4 +17,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class DonationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Donation
-        fields = ('title')
+        fields = ('title','description','create_time','modify_time','deadline')

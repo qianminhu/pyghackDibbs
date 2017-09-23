@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, Group
 from dibbs_app.models import Donation
 from rest_framework import viewsets
-from dibbs_app.serializers import UserSerializer, GroupSerializer
+from dibbs_app.serializers import UserSerializer, GroupSerializer, DonationSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
@@ -15,4 +15,4 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 class DonationsViewSet(viewsets.ModelViewSet):
      queryset = Donation.objects.all()
-     serializer_class = UserSerializer
+     serializer_class = DonationSerializer

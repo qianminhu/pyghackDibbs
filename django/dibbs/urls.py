@@ -6,10 +6,11 @@ from dibbs_app import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'donation', views.GroupViewSet)
+router.register(r'donation', views.DonationsViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include(router.urls)),
+   # url(r'^about/$', snippet_list, name='snippet-list'),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
