@@ -8,7 +8,7 @@ class Landing extends Component {
 	render() {
 		return (
 			<div class="Landing" >
-				<div className="hero is-primary is-medium">
+				<div className="hero is-primary is-small">
 					<div className="hero-head">
 						<header className="nav">
 							<div className="nav-right">
@@ -18,7 +18,7 @@ class Landing extends Component {
 						</header>
 					</div>
 					<div className="hero-body">
-						<div className="container">
+						<div className="section container">
 							<h1 className="title is-1">Dibbs</h1>
 							<h2 className="subtitle is-3">Save food. Do good.</h2>
 						</div>
@@ -45,6 +45,27 @@ class Landing extends Component {
 						</div>
 					</div>
 				</div>
+			<div className="section">
+				<div className="container level">
+					<div className="level-left">
+						<div className="level-item">
+						<h2 className="subtitle is-4">OFFERINGS IN YOUR AREA </h2>
+						</div>
+					</div>
+					<div className="level-right">
+						<div className="level-item">
+							<h2 className="subtitle is-6">FILTER BY</h2>
+						</div>
+						<div className="level-item">
+							<div className="dropdown">
+								<div className="dropdown-trigger">
+									<button className="button" aria-haspopup="true" aria-controls="dropdown-menu"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			< Footer/>
 			</div>
 		);

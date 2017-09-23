@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-import NavBar from '../NavBar/NavBar.jsx';
 import Footer from '../Footer/Footer.jsx';
 
 import './SignUp.css';
@@ -9,7 +8,6 @@ class SignUp extends Component {
     render() {
         return (
             <div className="SignUp">
-                <NavBar />
                 <div className="hero is-primary">
                     <div className="hero-body">
                         <h1 className="title">Welcome to the team!</h1>
