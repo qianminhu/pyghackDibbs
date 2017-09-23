@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Footer from '../Footer/Footer.jsx';
+
 import "./Landing.css";
 
 class Landing extends Component {
@@ -43,7 +45,7 @@ class Landing extends Component {
 						</div>
 					</div>
 				</div>
-			
+			< Footer/>
 			</div>
 		);
 	}

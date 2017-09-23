@@ -12,6 +12,9 @@ class Footer extends Component {
                             </p>
                         </div>
                     </div>
+                    <div className="section">
+                        <button className="button is-primary">Click Me!</button>
+                    </div>
                 </footer>
             </div>
         );
