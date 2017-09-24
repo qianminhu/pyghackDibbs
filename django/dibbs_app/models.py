@@ -19,7 +19,7 @@ class Item(models.Model):
 class Location(models.Model):
     name =  models.CharField(max_length=50)
     address = models.CharField(max_length=50)
-    address2 = models.CharField(max_length=50)
+    address2 = models.CharField(max_length=50, blank=True, null=True)
     city = models.CharField(max_length=50)
     state = models.CharField(max_length=2)
     zipcode = models.CharField(max_length=10)
@@ -30,7 +30,7 @@ class Location(models.Model):
 
 class Organization(models.Model):
     name =  models.CharField(max_length=50)
-    tax_id = models.CharField(max_length=10)
+    tax_id = models.CharField(max_length=11)
     locations = models.ManyToManyField(Location, verbose_name="locations")
     def __str__(self):
         return self.name
@@ -47,6 +47,15 @@ class Donation(models.Model):
     cost_estimate = models.DecimalField(decimal_places=2, max_digits=20)
     def __str__(self):
         return self.title
+
+class Image(models.Model):
+    caption =  models.CharField(max_length=50)
+    donation = models.ForeignKey(Donation)
+
+    def image_path(instance, filename):
+        return "uploads/%s/%s" % (instance.donation.id, filename)
+
+    content = models.FileField(upload_to=image_path)
 
     
 class DonationStatus(models.Model):
