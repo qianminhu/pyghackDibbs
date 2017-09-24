@@ -17,6 +17,7 @@ class App extends Component {
                         return <Landing />
                     }} />
                     <Route path="/profile" component={Profile} />
+                    <Route path="/profile/:id" component={Profile} />
                     <Route path="/register" component={Register} />
                 </div>
                 </Router>

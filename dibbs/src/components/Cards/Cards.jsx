@@ -12,9 +12,8 @@ constructor(props) {
     };
   }
 
-// TODO - Don't hardcode localhost:8000 here
   componentWillMount() {
-    axios.get(`https://dibbs.xyz/donation/` , 
+    axios.get(`https://api.dibbs.xyz/donation/` , 
      { validateStatus: function (status) { console.log(status); return status == 200;} }).then(res => {
         const posts = res.data.results;
 		console.log(posts);

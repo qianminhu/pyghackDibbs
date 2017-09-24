@@ -34,6 +34,19 @@ class Organization(models.Model):
     def __str__(self):
         return self.name
 
+class DonationStatus(models.Model):
+    STATUS_OPTIONS =  (
+	("NEW", "New"),
+        ("CLAIMED", "Claimed"),
+        ("EXPIRED", "Expired"),
+        ("DELIVERED", "Delivered"),
+        ("IN TRANSIT", "In Transit")
+	)
+    
+    status = models.CharField(max_length=50, choices=STATUS_OPTIONS, default="NEW") 
+    def __str__(self):
+        return self.status
+
 class Donation(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=50)
@@ -43,6 +56,7 @@ class Donation(models.Model):
     items = models.ManyToManyField(Item, verbose_name="list of items in this donation")
     cost_estimate = models.DecimalField(decimal_places=2, max_digits=20)
     location = models.ForeignKey(Location)
+    status = models.ForeignKey(DonationStatus)
     def __str__(self):
         return self.title
 
@@ -56,15 +70,12 @@ class Image(models.Model):
     content = models.FileField(upload_to=image_path)
 
     
-class DonationStatus(models.Model):
-    status = models.CharField(max_length=50) 
-    def __str__(self):
-        return self.status
 
 class DonationStatusLog(models.Model):
     donation = models.ForeignKey(Donation)
     status =  models.ForeignKey(DonationStatus)
     status_time = models.DateTimeField(auto_now=True)
     notes = models.TextField()
+    recipient = models.ForeignKey(Organization)
     def __str__(self):
         return "%s - %s" % (self.donation.title, self.status.status)

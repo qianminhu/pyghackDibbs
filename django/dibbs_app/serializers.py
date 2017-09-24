@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from dibbs_app.models import Donation, Organization, Item, Location, StorageRequirement
+from dibbs_app.models import *
 from rest_framework import serializers
 
 
@@ -22,6 +22,7 @@ class OrganizationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Organization
         fields = ('name','tax_id', 'locations')
+        depth = 1
 
 class StorageRequirementSerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,8 +32,8 @@ class StorageRequirementSerializer(serializers.ModelSerializer):
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
-        storage_requirements = StorageRequirementSerializer()
-        fields = ('name', 'quantity', 'storage_requirements')
+        storage_requirement = StorageRequirementSerializer()
+        fields = ('name', 'quantity', 'storage_requirement')
 
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:
@@ -41,3 +42,10 @@ class DonationSerializer(serializers.ModelSerializer):
         location = LocationSerializer()
         fields = ('title', 'description', 'create_time', 'modify_time', 'deadline', 'cost_estimate', 'items', 'location')
         depth = 1
+
+class DonationStatusLogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DonationStatusLog
+        donation = DonationSerializer()
+        recipient = OrganizationSerializer()
+        fields = ('donation', 'status', 'status_time', 'recipient')
