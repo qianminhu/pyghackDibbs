@@ -6,7 +6,7 @@ Dibbs is the real time platform to connect surplus food at grocery stores to the
 
 ## FAQ 
 
-*For Donors:*
+#### *For Donors:*
 
 > Who can donate food?
 	
@@ -32,7 +32,9 @@ Dairy and produce donations should be refrigerated until pick-up. Meat donations
 
 The Federal Bill Emerson Good Samaritan Food Donation Act protects the donor and the recipient agency against liability with exception to gross negligence and/or intentional misconduct. More information here.
 
-*For Recipients:* 
+
+
+#### *For Recipients:* 
 
 > Who can receive food?
 
