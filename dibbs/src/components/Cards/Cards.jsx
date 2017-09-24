@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
+import './Cards.css';
+
 let foodCard = [
 	{
 		image: "https://cdn1.medicalnewstoday.com/content/images/headlines/316/316969/healthful-foods.jpg",
-		name: "Bruno's Pizzaria",
+		business: "Bruno's Pizzaria",
 		title: "Fruits & Vegies",
 		items: [
 			{
@@ -35,7 +37,7 @@ let foodCard = [
 	},
 	{
 		image: "https://cdn1.medicalnewstoday.com/content/images/headlines/316/316969/healthful-foods.jpg",
-		name: "Bruno's Pizzaria",
+		business: "Bruno's Pizzaria",
 		title: "Fruits & Vegies",
 		items: [
 			{
@@ -67,7 +69,7 @@ let foodCard = [
 	},
 	{
 		image: "https://cdn1.medicalnewstoday.com/content/images/headlines/316/316969/healthful-foods.jpg",
-		name: "Bruno's Pizzaria",
+		business: "Bruno's Pizzaria",
 		title: "Fruits & Vegies",
 		items: [
 			{
@@ -118,7 +120,7 @@ class Cards extends Component {
                                     <div className="column left-text">
                                         <div className="hero is-small">
                                             <div className="hero-body">
-                                                <h2 className="subtitle is-6">{entry.name}</h2>
+                                                <h2 className="subtitle is-6">{entry.business}</h2>
                                                 <h1 className="title is-4">{entry.title}</h1>
                                                 <ul>
                                                     {entry.items.map((element, position) => {
@@ -139,6 +141,28 @@ class Cards extends Component {
                                                 <h2 className="subtitle is-6">{entry.city}, {entry.state} {entry.zip}</h2>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                                <div className="card-footer">
+                                    <div className="card-footer-item">
+                                        {entry.tags.map((element, position) => {
+                                            if (element === "Perish Other") {
+                                                return(
+                                                    <span className="tag item-tag is-danger">{element}</span>
+                                                );
+                                            } else if (element === "Non - Perish"){
+                                                return(
+                                                    <span className="tag item-tag is-success">{element}</span>
+                                                );
+                                            } else {
+                                                return(
+                                                    <span className="tag item-tag">{element}</span>
+                                                );
+                                            }
+                                        })}
+                                    </div>
+                                    <div className="card-footer-item">
+                                        <button className="button is-warning"><strong>DIBBS</strong></button>
                                     </div>
                                 </div>
                             </div>
