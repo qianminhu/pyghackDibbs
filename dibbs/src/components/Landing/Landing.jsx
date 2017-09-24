@@ -1,22 +1,26 @@
 import React, { Component } from 'react';
 
+import Header from '../Header/Header.jsx';
 import Footer from '../Footer/Footer.jsx';
+import Cards from '../Cards/Cards.jsx';
 
 import "./Landing.css";
+
+let filterOptions = [
+	"Distance",
+	"Deadline",
+	"Type: Cold",
+	"Type: Frozen",
+	"Type: Shelf",
+	"Quantity"
+]
 
 class Landing extends Component {
 	render() {
 		return (
 			<div class="Landing" >
 				<div className="hero is-primary is-small">
-					<div className="hero-head">
-						<header className="nav">
-							<div className="nav-right">
-								<button className="button is-warning register">REGISTER</button>
-								<button className="button is-primary register"><strong>LOGIN</strong></button>
-							</div>
-						</header>
-					</div>
+					<Header />
 					<div className="hero-body">
 						<div className="section container">
 							<h1 className="title is-1">Dibbs</h1>
@@ -32,8 +36,11 @@ class Landing extends Component {
 											<p><strong>I am in</strong></p>
 										</div>
 										<div className="column is-half">
-											<div className="control">
+											<div className="control has-icons-left">
 												<input type="text" placeholder="City or Zip" className="input"/>
+												<span className="icon is-small is-left">
+													<i className="fa fa-address-book-o"></i>
+												</span>
 											</div>
 										</div>
 										<div className="column">
@@ -45,28 +52,35 @@ class Landing extends Component {
 						</div>
 					</div>
 				</div>
-			<div className="section">
-				<div className="container level">
-					<div className="level-left">
-						<div className="level-item">
-						<h2 className="subtitle is-4">OFFERINGS IN YOUR AREA </h2>
+				<div className="section">
+					<div className="container level">
+						<div className="level-left">
+							<div className="level-item">
+							<h2 className="subtitle is-4">OFFERINGS IN YOUR AREA </h2>
+							</div>
 						</div>
-					</div>
-					<div className="level-right">
-						<div className="level-item">
-							<h2 className="subtitle is-6">FILTER BY</h2>
-						</div>
-						<div className="level-item">
-							<div className="dropdown">
-								<div className="dropdown-trigger">
-									<button className="button" aria-haspopup="true" aria-controls="dropdown-menu"></button>
+						<div className="level-right">
+							<div className="level-item">
+								<h2 className="subtitle is-6">FILTER BY</h2>
+							</div>
+							<div className="level-item">
+								<div className="field">
+									<div className="control">
+										<div className="select">
+											<select>
+												{filterOptions.map((entry, index) => {
+													return <option key={index}>{entry}</option>
+												})}
+											</select>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			< Footer/>
+				<Cards />
+				<Footer />
 			</div>
 		);
 	}
