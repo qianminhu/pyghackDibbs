@@ -49,7 +49,7 @@ constructor(props) {
                                     <div className="column is-2">
                                         <div className="card-image">
                                             <figure className="image">
-                                                <img src="http://lorempixel.com/640/480/food/1/" alt={entry.image}/>
+                                                <img src="http://lorempixel.com/640/480/food/" alt={entry.image}/>
                                             </figure>
                                         </div>
                                     </div>
