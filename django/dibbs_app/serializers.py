@@ -31,8 +31,8 @@ class StorageRequirementSerializer(serializers.ModelSerializer):
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
-        storage_requirements = StorageRequirementSerializer()
-        fields = ('name', 'quantity', 'storage_requirements')
+        storage_requirement = StorageRequirementSerializer()
+        fields = ('name', 'quantity', 'storage_requirement')
 
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:
