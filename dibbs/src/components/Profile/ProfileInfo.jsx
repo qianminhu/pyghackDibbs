@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
+import axios from 'axios';
 import './ProfileInfo.css';
 
-let profile = 	{
+let profileFAKE = 	{
     name: "Bruno Marcetti",
     email: "bruno@marcetti.com",
     phone: "217 333 44 55",
@@ -43,7 +43,43 @@ let profile = 	{
 }
 
 class ProfileInfo extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+        profile: []
+        };
+    }
+
+    componentWillMount() {
+    axios.get(`https://api.dibbs.xyz/organization/1` , 
+     { validateStatus: function (status) { console.log(status); return status == 200;} }).then(res => {
+        const profile = res.data.results;
+		console.log(profile);
+        this.setState({ profile });
+      }).catch(function (error) {
+        if (error.response) {
+            console.log(error.response.status);
+            console.log("We NEED to login");
+
+            axios.get
+          //  Route.Redirect("/Login");
+
+        } else if (error.request) {
+            // The request was made but no response was received
+            console.log(error.request);
+
+        } else {
+            console.log('Error - Something happened in setting up the request');
+        }
+
+        console.log(error);
+    });
+  }
+
     render() {
+        let profile = this.state.profile;
         return(
             <div className="ProfileInfo">
                 <div className="section">
@@ -58,8 +94,8 @@ class ProfileInfo extends Component {
                             </article>
                         </div>
                         <div className="column is-half text-column">
-                            <h1 className="title is-3">{profile.business}</h1>
-                            <h1 className="title is-5">{profile.address1}</h1>
+                            <h1 className="title is-3">{profile.name}</h1>
+                            <h1 className="title is-5">{profile.address}</h1>
                             <h1 className="subtitle is-6">{profile.address2}</h1>
                             <h1 className="title is-6">{profile.city}, {profile.state} {profile.zip}</h1>
                             <div className="columns">

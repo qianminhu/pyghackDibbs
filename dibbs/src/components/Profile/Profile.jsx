@@ -10,8 +10,10 @@ class Profile extends Component {
     constructor() {
         super();
         this.state = {
-            donor: true
+            donor: true,
+            profileId: 1
         };
+        console.log(this);
     }
 
     handleClick() {
@@ -27,7 +29,7 @@ class Profile extends Component {
                 <div className="hero is-primary is-small">
                     <Header />
                     <div className="hero-body">
-                        <ProfileInfo />
+                        <ProfileInfo id="{this.state.profileId}" />
                     </div>
                     <div className="hero-foot">
                         <nav className="tabs is-boxed is-fullwidth">
