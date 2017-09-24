@@ -16,12 +16,12 @@ class Landing extends Component {
 					<div className="hero-body">
 						<div className="section container">
 							<img src="https://i.imgur.com/U01GsDY.png" alt="Dibbs Logo"/>
-							<h2 className="subtitle is-3">Save food. Do good.</h2>
+							<h3 className="subtitle is-3 main-subtitle">Save food. Do good.</h3>
 						</div>
 					</div>
 					<div className="head-foot">
 						<div className="container zip-code">
-							<div className="card">
+							<div className="card landing-card">
 								<div className="card-content">
 									<div className="columns level">
 										<div className="column">

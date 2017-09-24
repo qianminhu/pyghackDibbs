@@ -14,3 +14,14 @@
 .zip-code {
   width: 30em;
 }
+
+.main-subtitle {
+  color: rgba(0, 0, 0, 0.5) !important;
+  font-weight: 700 !important;
+}
+
+.landing-card {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  margin-bottom: -50px;
+}

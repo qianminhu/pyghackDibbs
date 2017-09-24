@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './Offerings.css';
+
 let filterOptions = [
 	"Distance",
 	"Deadline",
@@ -14,7 +16,7 @@ class Offerings extends Component {
         return(
             <div className="Offerings">
 				<div className="section">
-					<div className="container level">
+					<div className="container level offering-container">
 						<div className="level-left">
 							<div className="level-item">
 							<h2 className="subtitle is-4">OFFERINGS IN YOUR AREA </h2>
