@@ -9,6 +9,7 @@ admin.site.register(DonationStatus)
 admin.site.register(DonationStatusLog)
 admin.site.register(Organization)
 admin.site.register(Location)
+admin.site.register(Image)
 
 
 # Register your models here.

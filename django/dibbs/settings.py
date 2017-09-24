@@ -44,7 +44,7 @@ INSTALLED_APPS = [
 #todo Eventually disable Default Admin user
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAdminUser',
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ],
     'PAGE_SIZE': 10
 }
