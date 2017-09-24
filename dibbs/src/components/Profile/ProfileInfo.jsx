@@ -53,7 +53,7 @@ class ProfileInfo extends Component {
     }
 
     componentWillMount() {
-    axios.get(`https://api.dibbs.xyz/organization/1` , 
+    axios.get(`https://dibbs.xyz/organization/1` , 
      { validateStatus: function (status) { console.log(status); return status == 200;} }).then(res => {
         const profileAPI = res.data.results;
 		console.log(profileAPI);

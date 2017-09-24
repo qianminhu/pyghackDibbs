@@ -13,7 +13,7 @@ constructor(props) {
   }
 
   componentWillMount() {
-    axios.get(`https://api.dibbs.xyz/donation/` , 
+    axios.get(`https://dibbs.xyz/donation/` , 
      { validateStatus: function (status) { console.log(status); return status == 200;} }).then(res => {
         const posts = res.data.results;
 		console.log(posts);
