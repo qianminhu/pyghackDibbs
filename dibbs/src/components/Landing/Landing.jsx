@@ -15,7 +15,7 @@ class Landing extends Component {
 					<Header />
 					<div className="hero-body">
 						<div className="section container">
-							<h1 className="title is-1">Dibbs</h1>
+							<img src="https://i.imgur.com/U01GsDY.png" alt="Dibbs Logo"/>
 							<h2 className="subtitle is-3">Save food. Do good.</h2>
 						</div>
 					</div>

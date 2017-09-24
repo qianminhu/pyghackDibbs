@@ -59,7 +59,7 @@ class Header extends Component {
                     <header className="nav">
                         <div className="nav-left">
                             <div className="nav-item">
-                                <h1 className="title"><Link to="/">Dibbs</Link></h1>
+                                <Link to="/"><a className="nav-item"><img src="https://i.imgur.com/YCX0xCz.png" alt="Dibbs Logo"/></a></Link>
                             </div>
                         </div>
                         <div className="nav-right">
