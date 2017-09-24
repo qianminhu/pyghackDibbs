@@ -1,3 +1,9 @@
 .offering-container {
     margin-top: 20px !important;
 }
+
+.offerings-title {
+    color: #999999 !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem;
+}

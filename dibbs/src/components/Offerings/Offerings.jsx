@@ -19,7 +19,7 @@ class Offerings extends Component {
 					<div className="container level offering-container">
 						<div className="level-left">
 							<div className="level-item">
-							<h2 className="subtitle is-4">OFFERINGS IN YOUR AREA </h2>
+							<h2 className="subtitle is-4 offerings-title">OFFERINGS IN YOUR AREA </h2>
 							</div>
 						</div>
 						<div className="level-right">
