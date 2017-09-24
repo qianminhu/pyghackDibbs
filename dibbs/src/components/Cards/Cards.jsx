@@ -13,7 +13,7 @@ constructor(props) {
   }
 
   componentWillMount() {
-    axios.get(`https://api.dibbs.xyz/donation/` , 
+    axios.get(`https://dibbs.xyz/donation/` , 
      { validateStatus: function (status) { console.log(status); return status == 200;} }).then(res => {
         const posts = res.data.results;
 		console.log(posts);
@@ -49,7 +49,7 @@ constructor(props) {
                                     <div className="column is-2">
                                         <div className="card-image">
                                             <figure className="image">
-                                                <img src={entry.image} alt={entry.image}/>
+                                                <img src="http://lorempixel.com/640/480/food/1/" alt={entry.image}/>
                                             </figure>
                                         </div>
                                     </div>

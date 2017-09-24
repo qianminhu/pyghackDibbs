@@ -12,7 +12,7 @@ router.register(r'item', views.ItemViewSet)
 router.register(r'location', views.LocationViewSet)
 router.register(r'organization', views.OrganizationViewSet)
 router.register(r'donation', views.DonationsViewSet)
-router.register(r'donationstatuslog', views.DonationStatusLogSerializer)
+router.register(r'donationstatuslog', views.DonationStatusLogViewSet)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

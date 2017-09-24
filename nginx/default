@@ -33,6 +33,14 @@ server {
 
 	server_name _;
 
+	location /organization {
+		proxy_pass http://localhost:8000; 
+	}
+
+	location /donation {
+		proxy_pass http://localhost:8000;
+	}
+
 	location / {
 		# First attempt to serve request as file, then ask python
 		try_files $uri $uri/ =404;
