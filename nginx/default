@@ -72,7 +72,7 @@ server {
         ssl_certificate     /etc/letsencrypt/live/dibbs.xyz/fullchain.pem;
         ssl_certificate_key /etc/letsencrypt/live/dibbs.xyz/privkey.pem;
 
-        root /work/aantony/2017-09-22-pyghack/pyghackDibbs/apiverify/;
+        root /work/aantony/2017-09-22-pyghack/pyghackDibbs/django/;
 
         index index.html index.htm;
 
