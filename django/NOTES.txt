@@ -10,3 +10,29 @@ cd /work/aantony/2017-09-22-pyghack/pyghackDibbs/django/
 ./manage.py runserver 0.0.0.0:8000
 
 
+
+npm
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
+
+
+# certbot for letsencrypt
+
+	https://certbot.eff.org/#ubuntuxenial-other
+	$ sudo apt-get update
+	$ sudo apt-get install software-properties-common
+	$ sudo add-apt-repository ppa:certbot/certbot
+	$ sudo apt-get update
+	$ sudo apt-get install certbot 
+
+	# 
+	$ certbot certonly --webroot -w /work/aantony/2017-09-22-pyghack/pyghackDibbs/django/static -d dibbs.xyz
+
+
+# start ssl dev server (django-sslserver)
+
+ ./manage.py runsslserver \
+    --certificate /etc/letsencrypt/live/dibbs.xyz/fullchain.pem \
+     --key /etc/letsencrypt/live/dibbs.xyz/privkey.pem \
+       0.0.0.0:443
+
