@@ -38,6 +38,6 @@ class DonationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Donation
         items = ItemSerializer(many=True, read_only=True)
-       # location = LocationSerializer()
-        fields = ('title', 'description', 'create_time', 'modify_time', 'deadline', 'cost_estimate','items')
+        location = LocationSerializer()
+        fields = ('title', 'description', 'create_time', 'modify_time', 'deadline', 'cost_estimate', 'items', 'location')
         depth = 1

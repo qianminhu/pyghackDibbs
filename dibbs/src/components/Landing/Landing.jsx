@@ -10,7 +10,7 @@ import "./Landing.css";
 class Landing extends Component {
 	render() {
 		return (
-			<div class="Landing" >
+			<div className="Landing" >
 				<div className="hero is-primary is-small">
 					<Header />
 					<div className="hero-body">
