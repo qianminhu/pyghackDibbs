@@ -41,7 +41,7 @@ constructor(props) {
         return(
             <div className="Cards">
             {this.state.posts.map((entry, index) => {
-				
+				let imagePath = "http://lorempixel.com/640/480/food/" + index
                 return (<div className="food-card" key={index + "a"}>
                         <div className="container">
                             <div className="card">
@@ -49,7 +49,7 @@ constructor(props) {
                                     <div className="column is-2">
                                         <div className="card-image">
                                             <figure className="image">
-                                                <img src="http://lorempixel.com/640/480/food/" alt={entry.image}/>
+                                                <img src={imagePath} alt={entry.image}/>
                                             </figure>
                                         </div>
                                     </div>
@@ -79,22 +79,19 @@ constructor(props) {
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <div className="card-footer-item">
-
-                                                <span className="tag item-tag is-danger">WARNING : FROZEN</span>
-                                      
-                                    
-                                </div>
-                                <div className="card-footer-item">
-                                    {this.props.buttonInfo === "DIBBS" ?
-                                    (<button className="button is-warning"><strong>{this.props.buttonInfo}</strong></button>):
-                                    (entry.available ? 
-                                    (<button className="button is-warning"><strong>{this.props.buttonInfo}</strong></button>): 
-                                    (<button className="button is-static"><strong>{this.props.buttonInfo}</strong></button>))
-                                    }
-                                </div>
+								<div className="card-footer">
+									<div className="card-footer-item">
+										<span className="tag item-tag is-danger">WARNING : FROZEN</span>
+									</div>
+									<div className="card-footer-item">
+										{this.props.buttonInfo === "DIBBS" ?
+										(<button className="button is-warning"><strong>{this.props.buttonInfo}</strong></button>):
+										(entry.available ? 
+										(<button className="button is-warning"><strong>{this.props.buttonInfo}</strong></button>): 
+										(<button className="button is-static"><strong>{this.props.buttonInfo}</strong></button>))
+										}
+									</div>
+								</div>
                             </div>
                         </div>
                     </div>);
