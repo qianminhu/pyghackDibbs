@@ -6,6 +6,11 @@ from dibbs_app import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
+
+router.register(r'storagerequirements', views.StorageRequirementViewSet)
+router.register(r'item', views.ItemViewSet)
+router.register(r'location', views.LocationViewSet)
+router.register(r'organization', views.OrganizationViewSet)
 router.register(r'donation', views.DonationsViewSet)
 
 urlpatterns = [
