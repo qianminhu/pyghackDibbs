@@ -25,7 +25,7 @@ class Profile extends Component {
         return(
             <div className="Profile">
                 <div className="hero is-primary is-small">
-                    <Header />
+                    <Header isLoggedIn={true}/> {/* Obviously this is horrible. Fix this otherwise logged in will always be true. */}
                     <div className="hero-body">
                         <ProfileInfo />
                     </div>

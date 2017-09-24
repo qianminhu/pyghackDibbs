@@ -25,7 +25,7 @@ class SignUp extends Component {
     }
 
     handleCancel() {
-        window.location.reload();
+        window.location.assign("/");
     }
 
     handleNameChange(e) {
@@ -72,8 +72,9 @@ class SignUp extends Component {
         if (this.state.id === undefined) {
             // TODO: You will need to check more than just the last field. I am too lazy right now.
             this.setState({warning: true});
+            window.location.reload();
         } else {
-            window.location.assign(window.location.href);
+            window.location.assign("/profile");
         }
     }
 

@@ -13,7 +13,9 @@ class App extends Component {
             <div className="App">
                 <Router>
                 <div className="Router">
-                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/" render={(props) => {
+                        return <Landing />
+                    }} />
                     <Route path="/profile" component={Profile} />
                     <Route path="/register" component={Register} />
                 </div>
