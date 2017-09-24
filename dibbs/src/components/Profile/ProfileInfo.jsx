@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './ProfileInfo.css';
 
-let profileFAKE = 	{
+let profile = 	{
     name: "Bruno Marcetti",
     email: "bruno@marcetti.com",
     phone: "217 333 44 55",
@@ -55,15 +55,13 @@ class ProfileInfo extends Component {
     componentWillMount() {
     axios.get(`https://api.dibbs.xyz/organization/1` , 
      { validateStatus: function (status) { console.log(status); return status == 200;} }).then(res => {
-        const profile = res.data.results;
-		console.log(profile);
-        this.setState({ profile });
+        const profileAPI = res.data.results;
+		console.log(profileAPI);
+        this.setState({ profileAPI });
       }).catch(function (error) {
         if (error.response) {
             console.log(error.response.status);
             console.log("We NEED to login");
-
-            axios.get
           //  Route.Redirect("/Login");
 
         } else if (error.request) {
@@ -79,7 +77,9 @@ class ProfileInfo extends Component {
   }
 
     render() {
-        let profile = this.state.profile;
+        console.log("RENDER");
+        console.log(this.state.profile);
+      //  let profile = this.state.profile
         return(
             <div className="ProfileInfo">
                 <div className="section">
@@ -88,7 +88,7 @@ class ProfileInfo extends Component {
                             <article className="media">
                                 <div className="media-content">
                                     <p className="image is-256x256">
-                                        <img src={profile.image} alt={profile.bimage}/>
+                                        <img src="https://i.pinimg.com/736x/51/05/33/51053342ec28b078e2d5908afd16aec9--antipasto-tray-food-trays.jpg" alt="profile123"/>
                                     </p>
                                 </div>
                             </article>
