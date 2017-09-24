@@ -22,6 +22,7 @@ class OrganizationSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Organization
         fields = ('name','tax_id', 'locations')
+        depth = 1
 
 class StorageRequirementSerializer(serializers.ModelSerializer):
     class Meta:
