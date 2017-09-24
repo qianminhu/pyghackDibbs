@@ -2,128 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './Cards.css';
 
-
-let foodCard = [
-	{
-        name: "Bruno Marcetti",
-        email: "bruno@marcetti.com",
-        phone: "217 333 44 55",
-        id: "47-1212121",
-        image: "https://cdn1.medicalnewstoday.com/content/images/headlines/316/316969/healthful-foods.jpg",
-        bimage: "https://i.pinimg.com/736x/51/05/33/51053342ec28b078e2d5908afd16aec9--antipasto-tray-food-trays.jpg",
-		business: "Bruno's Pizzaria",
-		title: "Fruits & Vegies",
-		items: [
-			{
-				food: "Strawberies",
-				quantity: "2",
-				weight: "lbs"
-			},
-			{
-				food: "Kale",
-				quantity: "4",
-				weight: "lbs"
-			},
-			{
-				food: "Oats",
-				quantity: "40",
-				weight: "lbs"
-			},
-		],
-		tags: [
-			"Perish Other",
-			"Non - Perish"
-		],
-		time: "6:00PM",
-		date: "Sep 24",
-        address1: "60 Hazelwood Dr",
-        address2: "Suite 600, Building A",
-		city: "Champaign",
-		state: "IL",
-        zip: 61820,
-        available: true
-	},
-	{
-        name: "Bruno Marcetti",
-        email: "bruno@marcetti.com",
-        phone: "217 333 44 55",
-        id: "47-1212121",
-        image: "https://cdn1.medicalnewstoday.com/content/images/headlines/316/316969/healthful-foods.jpg",
-        bimage: "https://i.pinimg.com/736x/51/05/33/51053342ec28b078e2d5908afd16aec9--antipasto-tray-food-trays.jpg",
-		business: "Bruno's Pizzaria",
-		title: "Fruits & Vegies",
-		items: [
-			{
-				food: "Strawberies",
-				quantity: "2",
-				weight: "lbs"
-			},
-			{
-				food: "Kale",
-				quantity: "4",
-				weight: "lbs"
-			},
-			{
-				food: "Oats",
-				quantity: "40",
-				weight: "lbs"
-			},
-		],
-		tags: [
-			"Perish Other",
-			"Non - Perish"
-		],
-		time: "6:00PM",
-		date: "Sep 24",
-		address1: "60 Hazelwood Dr",
-        address2: "Suite 600, Building A",
-		city: "Champaign",
-		state: "IL",
-		zip: 61820,
-        available: true
-	},
-	{
-        name: "Bruno Marcetti",
-        email: "bruno@marcetti.com",
-        phone: "217 333 44 55",
-        id: "47-1212121",
-        image: "https://cdn1.medicalnewstoday.com/content/images/headlines/316/316969/healthful-foods.jpg",
-        bimage: "https://i.pinimg.com/736x/51/05/33/51053342ec28b078e2d5908afd16aec9--antipasto-tray-food-trays.jpg",
-		business: "Bruno's Pizzaria",
-		title: "Fruits & Vegies",
-		items: [
-			{
-				food: "Strawberies",
-				quantity: "2",
-				weight: "lbs"
-			},
-			{
-				food: "Kale",
-				quantity: "4",
-				weight: "lbs"
-			},
-			{
-				food: "Oats",
-				quantity: "40",
-				weight: "lbs"
-			},
-		],
-		tags: [
-			"Perish Other",
-			"Non - Perish"
-		],
-		time: "6:00PM",
-		date: "Sep 24",
-		address1: "60 Hazelwood Dr",
-        address2: "Suite 600, Building A",
-		city: "Champaign",
-		state: "IL",
-		zip: 61820,
-        available: false
-	}
-]
-
-
 class Cards extends Component {
 
 constructor(props) {
@@ -136,7 +14,7 @@ constructor(props) {
 
 // TODO - Don't hardcode localhost:8000 here
   componentWillMount() {
-    axios.get(`http://localhost:8000/donation/` , 
+    axios.get(`https://dibbs.xyz/donation/` , 
      { validateStatus: function (status) { console.log(status); return status == 200;} }).then(res => {
         const posts = res.data.results;
 		console.log(posts);
