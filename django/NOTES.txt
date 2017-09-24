@@ -40,6 +40,11 @@ https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubunt
 	# 
 	$ certbot certonly --webroot -w /work/aantony/2017-09-22-pyghack/pyghackDibbs/django/static -d dibbs.xyz
 
+        # with alt name
+	$ certbot certonly --webroot -w /work/aantony/2017-09-22-pyghack/pyghackDibbs/django/static -d dibbs.xyz \
+                                     -w /work/aantony/2017-09-22-pyghack/pyghackDibbs/apiverify -d api.dibbs.xyz
+
+
 # start ssl dev server (django-sslserver)
 
  ./manage.py runsslserver \
