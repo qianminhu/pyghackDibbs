@@ -66,5 +66,6 @@ class DonationStatusLog(models.Model):
     status =  models.ForeignKey(DonationStatus)
     status_time = models.DateTimeField(auto_now=True)
     notes = models.TextField()
+    recipient = models.ForeignKey(Organization)
     def __str__(self):
         return "%s - %s" % (self.donation.title, self.status.status)

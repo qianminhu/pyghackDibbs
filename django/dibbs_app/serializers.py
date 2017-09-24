@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from dibbs_app.models import Donation, Organization, Item, Location, StorageRequirement
+from dibbs_app.models import *
 from rest_framework import serializers
 
 
@@ -41,3 +41,10 @@ class DonationSerializer(serializers.ModelSerializer):
         location = LocationSerializer()
         fields = ('title', 'description', 'create_time', 'modify_time', 'deadline', 'cost_estimate', 'items', 'location')
         depth = 1
+
+class DonationStatusLogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = DonationStatusLog
+        donation = DonationSerializer()
+        recipient = OrganizationSerializer()
+        fields = ('donation', 'status', 'status_time', 'recipient')

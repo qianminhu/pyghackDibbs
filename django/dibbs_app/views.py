@@ -43,3 +43,8 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = (permissions.IsAdminUser,)
+class DonationStatusLogViewSet(viewsets.ModelViewSet):
+    queryset = DonationStatusLog.objects.all()
+    serializer_class = DonationStatusLogSerializer
+    permission_classes = (permissions.AllowAny,)
+
