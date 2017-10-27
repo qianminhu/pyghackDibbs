@@ -1,2 +1,4 @@
-django
-djangorestframework
+Django==1.11.5
+django-sslserver==0.20
+djangorestframework==3.6.4
+PyYAML==3.12
